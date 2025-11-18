@@ -8,13 +8,18 @@ X = np.array([
     
 ])  
 Y = np.array([
-    [0],
-    [1],
     [1],
     [0],
+    [0],
+    [1],
     
 ])  
-mlp= MLP(2,2,1,X,Y,25)
+mlp= MLP([2,2,1],X,Y,25)
+X_batch = np.array([
+    [0, 0],
+    [1, 0],
+    [0, 1]
+])   # shape (3,2)
 
 for i in range(0,100000):
     mlp.train()
